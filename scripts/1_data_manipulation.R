@@ -58,3 +58,12 @@ Serocall_6995 <-
   rename("Lane name" = "Lane_id")
 
 Serocall_PD069O_meta_data <- left_join(sw_sequence_metadata, Serocall_6995)
+
+#Import_data_Virulence_genes
+Virulence_genes_PD069O <- import(here("../Genomic_data/Virulence_genes_PD069O.xlsx")) %>% 
+  select(-Lane_id)
+
+Virulence_genes_PD069O_2 <- 
+  Virulence_genes_PD069O %>%
+  pivot_longer(!Day, names_to = "Virulence genes", values_to = "count")  %>% 
+  mutate(Day = as.character(Day))
