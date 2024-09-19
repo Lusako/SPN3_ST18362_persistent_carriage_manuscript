@@ -32,7 +32,7 @@ Copy the reference database and cluster file to your directory
 ./PopPUNK2/GPS_v7 and ./GPS_v7_external_clusters.csv
 
 Copy seroba database to your directory
-./seroba
+./seroba/database 
 
 Prepare a 2-column tab-delimited file: 1st sample name 2nd path to the assembly file
 query.txt
@@ -42,4 +42,4 @@ Create query.txt in excel using the assembly.txt
 poppunk_assign --db GPS_v6 --distances GPS_v6/GPS_v6.dists --query query.txt --output GPSC_assignment --external-clustering GPS_v6_external_clusters.csv
 
 **Step 6**: Run themisto align and mSWEEP for:
-./run_msweep_pipeline.sh 6995 pathfind_lanes_lusako.txt
+./run_msweep_pipeline.sh ./lanex_study.txt ./lanes.txt ./combined_GPS.fna ./themisto_index ./GPSC_assignment/GPSC_assignment_external_clusters_new.csv ./seroba/database ./msweep_output/
