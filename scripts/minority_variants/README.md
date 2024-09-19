@@ -86,5 +86,6 @@ Please check for indels with: samtools view indel_qualities_recalibrated.bam | g
 
 ./run_lofreq_2.sh
 
+#In called only minority variants
 note: WARNING(lofreq_call.c|main_call): 8 indel calls (before filtering) were made without indel alignment-quality! 
 Did you forget to indel alignment-quality to your bam-file?
