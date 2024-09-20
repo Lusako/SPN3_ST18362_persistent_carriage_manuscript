@@ -1,7 +1,7 @@
 #minority variants min cov 20
 #exclude #45907_2#174 and "45897_2#160" due to multiple carriage and "45907_2#141" due to failed QC
 snps_snpeff_lofreq <- 
-  import(here("../../snpEff/lofreq_GPSC10_ref/", "lofreq_final.csv")) %>%
+  import(here("../../lofreq_GPSC10_ref/", "lofreq_final.csv")) %>%
   rename("gene_name" = "ANN[*].GENE",
          "effect" = "ANN[*].EFFECT") %>%
   mutate(Lane_id = str_extract(`45897_1#211 CHROM`, "^[^\\s]+"),
@@ -11,11 +11,11 @@ snps_snpeff_lofreq <-
 
 #write_xlsx(snps_snpeff_lofreq,"/Users/lusako/Downloads/lofreq_final.xlsx")
 coverage <- 
-  import(here("../../snpEff/lofreq_QC_and_scripts/", "coverage_report.xls")) %>%
+  import(here("../../lofreq_QC_and_scripts/", "coverage_report.xls")) %>%
   select(Lane_id, genome_coverage, minAF)
 
 Kraken <- 
-  import(here("../../snpEff/lofreq_QC_and_scripts/", "qc_summary.csv")) %>%
+  import(here("../../lofreq_QC_and_scripts/", "qc_summary.csv")) %>%
   rename("Lane_id" = "Species") %>%
   select(-Total) %>%
   pivot_longer(!Lane_id, names_to = "specie", values_to = "percentage") %>%
@@ -143,7 +143,7 @@ num_nuc_sub <-
   mutate(num_nuc_sub = as.numeric(num_nuc_sub))
 
 gene_size_product <- 
-  import(here("../../snpEff/", "CP046355_gene_sizes_and_cds_products_with_notes.txt")) %>%
+  import(here("../../", "CP046355_gene_sizes_and_cds_products_with_notes.txt")) %>%
   rename("gene_name"= "Gene/LocusTag",
          "gene_size" = "Size", #number of nucleoitides
          "CDS_product" = "CDS Product") %>% 
