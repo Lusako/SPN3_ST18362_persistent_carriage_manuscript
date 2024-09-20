@@ -44,11 +44,9 @@ B <-
   ylim(0,8) +
   geom_errorbar(data = df, aes(x=factor(day), y = Median, color = new, ymin = CI_L, ymax = CI_U), width = 0.3, linewidth = 0.8) +
   theme_bw(base_size = 25, base_family = "Lato") +
-  #scale_x_discrete(limits=c("2","14","21","28","58","87","119", "149", "178", "205", "253", "289", "315", "337")) +
   theme(legend.position = c(0.85, 0.878), legend.title = element_blank(),
         legend.box = "vertical", plot.title=element_text(size=25, face = "bold")) +
-  scale_color_manual(values=c("ST18362" = "red")) + #, "all Serotype 3" = '#42d4f4'), 
-  #limits = c("ST18362", "all Serotype 3")) +
+  scale_color_manual(values=c("ST18362" = "red")) + #, "all Serotype 3" = '#42d4f4')
   labs(title="",x ="Time (day)", y = "Pneumococcal carriage density \n (log10CFU/ml)")
 
 ggsave(here("output", "Fig1B_carriage_density_dur.svg"),
