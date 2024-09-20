@@ -1,10 +1,10 @@
 #ST3_WG_tree Gubbins tree
 #import data
-ST3_WG_metadata <- import(here("../Genomic_data/ST3_WG_metadata.csv")) %>%
+ST3_WG_metadata <- import(here("../ST3_WG_metadata.csv")) %>%
   select(Lane_id, GPSC, ST, Country, Continent)
 
 #import Newick files
-filename_new4 <- "../Genomic_data/ST3_WG_tree.nwk"
+filename_new4 <- "../ST3_WG_tree.nwk"
 ST3_WG_tree <- ape::read.tree(filename_new4)
 phytools::read.newick(filename_new4)
 
@@ -86,12 +86,12 @@ ggsave(here("output", "Fig2A_ST3_global.svg"),
 
 #GPSC10 new
 #import data
-GPSC10_Global_new <- import(here("../Genomic_data/GPSC10_metadata_insilico_serotype.xlsx"))
-ST3_aln_tree_metadata <- import(here("../Genomic_data/ST3_aln_tree_metadata.csv")) %>%
+GPSC10_Global_new <- import(here("../GPSC10_metadata_insilico_serotype.xlsx"))
+ST3_aln_tree_metadata <- import(here("../ST3_aln_tree_metadata.csv")) %>%
   select(Lane_id, GPSC)
 
 #import Newick files
-filename_new <- "../Genomic_data/GPSC10_Global_new.nwk"
+filename_new <- "../GPSC10_Global_new.nwk"
 GPSC10_tree_new <- ape::read.tree(filename_new)
 phytools::read.newick(filename_new)
 
@@ -154,11 +154,11 @@ ggsave(here("output", "Fig2B_GPSC10_global_tree.svg"),
 
 #ST3_aln_tree
 #import data
-ST3_aln_tree_metadata <- import(here("../Genomic_data/ST3_aln_tree_metadata.csv")) %>%
+ST3_aln_tree_metadata <- import(here("../ST3_aln_tree_metadata.csv")) %>%
   select(Lane_id, GPSC)
 
 #import Newick files
-filename_new2 <- "../Genomic_data/ST3_aln_tree.nwk"
+filename_new2 <- "../ST3_aln_tree.nwk"
 ST3_aln_tree <- ape::read.tree(filename_new2)
 phytools::read.newick(filename_new2)
 
@@ -229,12 +229,12 @@ ggsave(here("output", "Fig4A_cps_locus_ST3.svg"),
 
 #PD069O_tree_AMR
 #import data
-PD069O_tree_metadata <- import(here("../Genomic_data/PD069O_tree_metadata.csv")) %>%
+PD069O_tree_metadata <- import(here("../PD069O_tree_metadata.csv")) %>%
   mutate(Day = as.character(Day), Benzylpenicillin = as.character(Benzylpenicillin),
          Ceftriaxone = as.character(Ceftriaxone))
 
 #import Newick files
-filename_new3 <- "../Genomic_data/GPSC10_clean_full_final_tree.nwk"
+filename_new3 <- "../GPSC10_clean_full_final_tree.nwk"
 PD069O_tree <- ape::read.tree(filename_new3)
 phytools::read.newick(filename_new3)
 
@@ -387,11 +387,11 @@ ggsave(here("output", "Sup_Fig1A_PD069O_tree.svg"),
 
 #GPS serotype 3
 #import data
-ST3_Whole_genome_metadata <- import(here("../Genomic_data/ST3_whole_genome_Metadata.csv")) %>%
+ST3_Whole_genome_metadata <- import(here("../ST3_whole_genome_Metadata.csv")) %>%
   mutate(penMic = as.character(penMic))
 
 #import Newick files
-filename_new2 <- "../Genomic_data/ST3_whole_genome.nwk"
+filename_new2 <- "../ST3_whole_genome.nwk"
 ST3_Whole_genome_tree <- ape::read.tree(filename_new2)
 phytools::read.newick(filename_new2)
 
