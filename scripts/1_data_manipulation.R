@@ -33,7 +33,7 @@ Manifest_data <- import(here("data", "new_manifest.xlsx")) %>%
                                  SAMPLE_TYPE == "RPNS" ~ "PNS"))
 
 Manifest_metadata <- import(here("data", "manifest_metadata.xlsx")) %>%
-  filter(`SAMPLE DESCRIPTION` == "ISOLATE", pid == "PD069O") %>%
+  filter(`SAMPLE DESCRIPTION` == "ISOLATE", pid == "SPN3_PID") %>%
   select(-`CONC. (ng/ul)`, -`SAMPLE DESCRIPTION`) %>%
   rename("SAMPLE_TYPE" = "SAMPLE TYPE") %>%
   mutate(SAMPLE_TYPE = case_when(SAMPLE_TYPE == "PNS" ~ "PNS",
@@ -54,13 +54,13 @@ Duration_12 <- import(here("data", "pneumov_12_duration.xlsx")) %>%
 
 #Import_data_serocalls
 Serocall_6995 <- 
-  import(here("../Genomic_data/Genome_projects/Sanger_analysis/Plate_sweep_analysis/Plate_sweeps_output/Output/","Serocall_results_6995.xlsx")) %>%
+  import(here("../","Serocall_results.xlsx")) %>%
   rename("Lane name" = "Lane_id")
 
 Serocall_PD069O_meta_data <- left_join(sw_sequence_metadata, Serocall_6995)
 
 #Import_data_Virulence_genes
-Virulence_genes_PD069O <- import(here("../Genomic_data/Virulence_genes_PD069O.xlsx")) %>% 
+Virulence_genes_PD069O <- import(here("../Virulence_genes.xlsx")) %>% 
   select(-Lane_id)
 
 Virulence_genes_PD069O_2 <- 
