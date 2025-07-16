@@ -1,4 +1,4 @@
-**Within-host pneumococcal serotype 3 genetic diversity and evolution during a one-year prolonged carriage episode in a healthy adult**
+**Within-host genetic diversity of pneumococcal serotype 3 during one-year prolonged carriage in a healthy adult**
 
 **Authors**: Lusako L. Sibale, Stephanie W. Lo, Newton Kalata, Tinashe K. Nyazika, Ndaona Mitole, Victoria Dyster, Alice Kusakala, Mercy Khwiya, Gift Sagawa, Joseph Phiri, Akuzike Kalizang'oma, Todd D. Swarthout, Neil French, Ken Malisita, Arox W. Kamng’ona, Robert S. Heyderman, Brenda A. Kwambana-Adams, Stephen D. Bentley, Chrispin Chaguza, Kondwani C. Jambo
 		
